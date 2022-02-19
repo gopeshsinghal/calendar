@@ -136,7 +136,49 @@ let showDay = (sum, leap) => {
         console.log("\n\tYEAR:\n\tNORMAL\n");
     }
 }
+let showDayJs = (sum, leap, date, month, year) => {
+    let day = sum % 7;
+    let dayId;
+    switch (day) {
+        case 0:
+            dayId = 'sun';
+            break;
+        case 1:
+            dayId = 'mon';
+            break;
+        case 2:
+            dayId = 'tue';
+            break;
+        case 3:
+            dayId = 'wed';
+            break;
+        case 4:
+            dayId = 'thu';
+            break;
+        case 5:
+            dayId = 'fri';
+            break;
+        default:
+            dayId = 'sat';
+            break;
+    }
+    let yearType;
+    if (leap) {
+        yearType = "LEAP";
+    }
+    else {
+        yearType = "NON LEAP";
+    }
+    document.getElementById("dateOutput").innerHTML = date + "/" + month + "/" + year;
+    document.getElementById("dayOutput").innerHTML = dayId;
+    document.getElementById("yearOutput").innerHTML = yearType;
 
+    highlight(dayId);
+
+}
+let highlight = (dayId) => {
+    document.getElementById(dayId).setAttribute("class", "highlightedClass");
+}
 let calender = (date, month, year) => {
     let leap = isLeap(year);
     if (isValid(date, month, leap)) {
@@ -148,9 +190,11 @@ let calender = (date, month, year) => {
         let sum = date + monthConst + leapYearCount + yearCount + yearConst + lyError;
 
         showDay(sum, leap);
+        showDayJs(sum, leap, date, month, year);
     }
     else {
         console.log("\n\tERROR! WRONG DATE GIVEN. TRY AGAIN\n");
+        alert("ERROR! WRONG DATE GIVEN. TRY AGAIN");
     }
 }
 
