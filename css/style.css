@@ -5,3 +5,8 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.highlightedClass{
+    color: red;
+    font-size: 100px;
+}
