@@ -1,0 +1,12 @@
+body{
+    background-color: aqua;
+    background-image: url('t3.jpeg');
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.highlightedClass{
+    color: red;
+    font-size: 100px;
+}
