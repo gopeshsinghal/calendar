@@ -1,3 +1,7 @@
 body{
     background-color: aqua;
+    background-image: url('t3.jpeg');
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
