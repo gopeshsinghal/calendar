@@ -5,13 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calendar</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <h1>Calendar</h1>
     <div class="Input">
-        <input type="string" placeholder="DD/MM/YYYY"> 
+        <input type="int" id="dateInput" placeholder="DD">
+        <input type="int" id="monthInput" placeholder="MM">
+        <input type="int" id="yearInput" placeholder="YYYY">
         <button>check for the day</button>
     </div>
     <div class="dayOutput">
@@ -28,6 +32,8 @@
         <span class="generalOutputSpam" id="dayOutput">DAY</span>
         <span class="generalOutputSpam" id="yearOutput">YEAR</span>
     </div>
+
+    <script src="logic.js"></script>
 </body>
 
 </html>
