@@ -8,6 +8,11 @@
     <title>Calendar</title>
 
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- //fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -18,6 +23,11 @@
         <input type="int" id="yearInput" placeholder="YYYY">
         <button id="checkForDay">check for the day</button>
     </div>
+    <div class="generalOutput">
+        <span class="generalOutputSpam" id="dateOutput">DATE</span>
+        <span class="generalOutputSpam" id="dayOutput">DAY</span>
+        <span class="generalOutputSpam" id="yearOutput">YEAR</span>
+    </div>
     <div class="dayOutput">
         <li class="daysToShow">MONDAY</li>
         <li class="daysToShow">TUESDAY</li>
@@ -26,11 +36,6 @@
         <li class="daysToShow">FRIDAY</li>
         <li class="daysToShow">SATURDAY</li>
         <li class="daysToShow">SUNDAY</li>
-    </div>
-    <div class="generalOutput">
-        <span class="generalOutputSpam" id="dateOutput">DATE</span>
-        <span class="generalOutputSpam" id="dayOutput">DAY</span>
-        <span class="generalOutputSpam" id="yearOutput">YEAR</span>
     </div>
 
     <script src="logic.js"></script>

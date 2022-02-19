@@ -1,7 +1,26 @@
 body{
-    background-color: aqua;
-    background-image: url('t3.jpeg');
-    color: white;
+    background-color: #cdcfc0;
+    /* background-image: url('t3.jpeg'); */
+    color: black;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Cormorant Garamond', serif;
+}
+h1{
+    width: 30%;
+    text-align: center;
+    /* background: rgb(131, 165, 228); */
+    font-family: 'Dancing Script', cursive;
+    font-size: 500%;
+
+}
+div{
+    /* background-color: #f1ebe5; */
+    margin: 5px;
+}
+li{
+    list-style-type: none;
+}
+.input{
+    color: #f1ebe5;
 }
