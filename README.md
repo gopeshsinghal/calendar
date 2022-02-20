@@ -1,2 +1,2 @@
 # calendar
-link: https://gopeshsinghal.github.io/calendar/ggi
+link: https://gopeshsinghal.github.io/calendar/
