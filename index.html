@@ -11,24 +11,28 @@
 
     <!-- //fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Montserrat:wght@200&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <h1>Calendar</h1>
-    <div class="Input">
-        <input type="int" id="dateInput" placeholder="DD">
-        <input type="int" id="monthInput" placeholder="MM">
-        <input type="int" id="yearInput" placeholder="YYYY">
-        <button id="checkForDay">check for the day</button>
+    <div class="left">
+        <h1 class="heading">CALENDAR<h1>
+        <div class="Input">
+            <input type="int" class="inputBox inputBox2" id="dateInput" placeholder="DD">
+            <input type="int" class="inputBox inputBox2" id="monthInput" placeholder="MM">
+            <input type="int" class="inputBox inputBox4" id="yearInput" placeholder="YYYY"><br>
+            <button id="checkForDay" class="checkButton">check for the day</button>
+        </div>
+        <div class="generalOutput">
+            <span class="generalOutputSpan" id="dateOutput">DATE</span>
+            <span class="generalOutputSpan" id="dayOutput">DAY</span>
+            <span class="generalOutputSpan" id="yearOutput">YEAR</span>
+        </div>
     </div>
-    <div class="generalOutput">
-        <span class="generalOutputSpam" id="dateOutput">DATE</span>
-        <span class="generalOutputSpam" id="dayOutput">DAY</span>
-        <span class="generalOutputSpam" id="yearOutput">YEAR</span>
-    </div>
-    <div class="dayOutput">
+    <div class="dayOutput" id="dayToOutput">
         <li id="mon" class="daysToShow">MONDAY</li>
         <li id="tue" class="daysToShow">TUESDAY</li>
         <li id="wed" class="daysToShow">WEDNESDAY</li>
@@ -37,7 +41,6 @@
         <li id="sat" class="daysToShow">SATURDAY</li>
         <li id="sun" class="daysToShow">SUNDAY</li>
     </div>
-
     <script src="logic.js"></script>
 </body>
 
