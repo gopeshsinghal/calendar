@@ -1,6 +1,8 @@
-
+/* fonts--> */
 /*font-family: 'Cormorant Garamond', serif;
 font-family: 'Montserrat', sans-serif;*/
+
+
 body{
     /* background-color: #cdcfc0; */
     background-image: url("Green Organic Warm Food and Restaurant Bio-Link Website.png");
@@ -10,26 +12,14 @@ body{
     font-family: 'Cormorant Garamond', serif;
 }
 
-.highlightedClass{
-    background-color: black;
-    color: #f1ebe5;
-}
-.black{
-    background-color: black;
-}
-
 
 
 /* left division */
-
 .left{
     width: 30%;
-    /* margin: 40px 30px; */
     margin-left: 5%;
     display: inline-block;
     text-align: center;
-    /* padding: 15px;    */
-    /* background-color: #fff; */
 }
 .heading{
     font-size: 400%;
@@ -39,6 +29,8 @@ body{
 
 
 }
+
+/* input box */
 /* .Input{
     border: 1px solid rgba(0, 0, 0, 0.150);
 } */
@@ -73,6 +65,8 @@ body{
     color: #f1ebe5;
     cursor: pointer;
 }
+
+/* general output box */
 .generalOutput{
     background-color: #f1ebe5;
     margin: auto 100px;
@@ -90,8 +84,9 @@ body{
     margin: 10px auto;
     padding: 10px;
 }
-/* day output layouts */
 
+
+/* day output box */
 .dayOutput{
     background-color: #f1ebe5;
     width: 25%;
@@ -109,3 +104,16 @@ body{
     font-size: 120%;
     padding: 10px;
 }
+
+/* javascript */
+.highlightedClass{
+    background-color: black;
+    color: #f1ebe5;
+}
+/* .highlightedClass{
+    background-color: #f1ebe5;
+    color: black;
+}
+.black{
+    background-color: black;
+} */

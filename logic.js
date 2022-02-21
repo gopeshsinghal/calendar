@@ -1,3 +1,5 @@
+
+// to check the year is leap or not
 let isLeap = (year) => {
     if (year % 4 === 0) {
         if (year % 100 === 0) {
@@ -11,6 +13,8 @@ let isLeap = (year) => {
     }
     return false;
 }
+
+// to check the validity of the given date
 let isValid = (date, month, leap) => {
     let valid = false;
     if (month > 0 && month <= 12) {
@@ -32,35 +36,7 @@ let isValid = (date, month, leap) => {
     return valid;
 }
 
-let lyErrorFunc = (month, leap) => {
-    // console.log(month+" "+leap);
-    if (leap && (month === 1 || month === 2)) {
-        return -1;
-    }
-    return 0;
-}
-
-let yearConstantFunc = (year) => {
-    let year_const0 = (Math.floor(year / 100)) % 4;
-    let year_const;
-    switch (year_const0) {
-        case 0:
-            year_const = 6;
-            break;
-        case 1:
-            year_const = 4;
-            break;
-        case 2:
-            year_const = 2;
-            break;
-        default:
-            year_const = 0;
-            break;
-    }
-
-    return year_const;
-}
-
+// to generate the month constant
 let monthConstantFunc = (month) => {
     let month_const;
     switch (month) {
@@ -105,44 +81,39 @@ let monthConstantFunc = (month) => {
     return month_const;
 }
 
-// let showDay = (sum, leap) => {
-//     let day = sum % 7;
-//     switch (day) {
-//         case 0:
-//             console.log("SUNDAY\n");
-//             break;
-//         case 1:
-//             console.log("MONDAY\n");
-//             break;
-//         case 2:
-//             console.log("TUESDAY\n");
-//             break;
-//         case 3:
-//             console.log("WEDNESDAY\n");
-//             break;
-//         case 4:
-//             console.log("THURSDAY\n");
-//             break;
-//         case 5:
-//             console.log("FRIDAY\n");
-//             break;
-//         default:
-//             console.log("SATURDAY\n");
-//             break;
-//     }
-//     if (leap) {
-//         console.log("\n\tYEAR:\n\tLEAP\n");
-//     }
-//     else {
-//         console.log("\n\tYEAR:\n\tNORMAL\n");
-//     }
-// }
-let showDayJs = (sum, leap, date, month, year) => {
+// to generate the year constant
+let yearConstantFunc = (year) => {
+    let year_const0 = (Math.floor(year / 100)) % 4;
+    let year_const;
+    switch (year_const0) {
+        case 0:
+            year_const = 6;
+            break;
+        case 1:
+            year_const = 4;
+            break;
+        case 2:
+            year_const = 2;
+            break;
+        default:
+            year_const = 0;
+            break;
+    }
+
+    return year_const;
+}
+
+// to correct the leap year error
+let lyErrorFunc = (month, leap) => {
+    if (leap && (month === 1 || month === 2)) {
+        return -1;
+    }
+    return 0;
+}
+
+// displaying day
+let display = (sum, leap, date, month, year) => {
     let day = sum % 7;
-    // console.log(sum);
-    // console.log(typeof (sum));
-    // console.log(day);
-    // console.log(typeof (day));
     let dayId;
     switch (day) {
         case 0:
@@ -181,15 +152,18 @@ let showDayJs = (sum, leap, date, month, year) => {
     highlight(dayId);
 
 }
+
+// to highlight the day box
 let highlight = (dayId) => {
-    // document.querySelectorAll(".daysToShow").setAttribute("class", "black");
-    // document.getElementById("dayToOutput").setAttribute("class", "black");
     for (var i = 0; i < 7; i++) {
-        // console.log(i)
         document.getElementsByClassName('daysToShow')[i].classList.remove("highlightedClass");
+        // document.getElementsByClassName('daysToShow')[i].classList.add("black");
     }
+    // document.getElementById(dayId).classList.remove("black");
     document.getElementById(dayId).classList.add("highlightedClass");
 }
+
+// head function
 let calender = (date, month, year) => {
     let leap = isLeap(year);
     if (isValid(date, month, leap)) {
@@ -198,21 +172,17 @@ let calender = (date, month, year) => {
         let yearCount = year % 100;
         let leapYearCount = Math.floor(yearCount / 4);
         let lyError = lyErrorFunc(month, leap);
-        // console.log(typeof(lyError));
-        // console.log(lyError);
         let sum = date + monthConst + leapYearCount + yearCount + yearConst + lyError;
-
-        // showDay(sum, leap);
-        showDayJs(sum, leap, date, month, year);
+        display(sum, leap, date, month, year);
     }
     else {
-        // console.log("\n\tERROR! WRONG DATE GIVEN. TRY AGAIN\n");
         alert("ERROR! WRONG DATE GIVEN. TRY AGAIN");
         location.reload();
     }
 }
 
 // DOM
+// int main()
 document.querySelector("#checkForDay").addEventListener("click", () => {
     let date = parseInt(document.getElementById("dateInput").value, 10);
     let month = parseInt(document.getElementById("monthInput").value, 10);
